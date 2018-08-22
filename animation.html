@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>CSS Animation</title>
+      <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .cover {
+            height: 100vh;
+            background: linear-gradient(
+                to bottom right, 
+                #ff1493 0%, 
+                #330099 100%
+            );
+            background-size: 600%;
+            animation: LinearEffect 10s ease-in-out infinite;
+        }
+
+        .small-bg {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background: linear-gradient(
+                to bottom right,
+                #330099 0%, 
+                #ff1493 10%, 
+                #330099 20%,
+                #ff1493 30%, 
+                #330099 40%,
+                #ff1493 50%, 
+                #330099 60%,
+                #ff1493 70%, 
+                #330099 80%,
+                #ff1493 90%, 
+                #330099 100%
+            );
+            background-size: 200%;
+            animation: LinearEffect .2s ease-in-out infinite;
+        }
+
+        .small {
+            position: absolute;
+            height: 150px;
+            width: 150px;
+            
+            animation: Move 10s ease-in-out infinite;
+        }
+
+        @keyframes Move {
+            0% {
+                top: -150px; left: -150px;
+            }
+            50% {
+                top: 100%; left: 100%;
+            }
+            100% {
+                top: -150px; left: -150px;
+            }
+        }
+
+        @keyframes LinearEffect {
+            0% {
+                background-position: 0% 50%;
+            }
+            25% {
+                background-position: 100% 50%;
+            }
+            50% {
+                background-position: 0% 50%;
+            }
+            75% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+      </style>
+  </head>
+  <body>
+    <div class="cover">
+            <div class="small">
+                <div class="small-bg"></div>
+            </div>
+    </div>
+  </body>
+</html>
