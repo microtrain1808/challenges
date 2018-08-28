@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Sample HTML5 File</title>
+        <script type="text/javascript" charset="utf-8">
+
+			function pageLoaded(){
+                var canvas = document.getElementById('canvas');
+                var ctx = canvas.getContext('2d');
+                canvas.height=window.innerHeight;
+                canvas.width=window.innerWidth;
+
+                function randColor(){
+                    return '#' + Math.floor(Math.random() * Math.pow(256, 3)).toString(16);
+                }
+
+                setInterval(function(){
+                    ctx.fillStyle = randColor();
+                    ctx.fillRect(0,0,canvas.width,canvas.height);
+                }, .1);
+                
+
+            }
+
+
+        </script>
+        
+        <style>
+            body{
+                padding: 0;
+                margin: 0;
+            }
+            canvas{
+                border:1px solid black; 
+                background: #000;
+            }
+        </style>
+	</head>
+	<body onload="pageLoaded();">
+		<canvas id="canvas">			
+			Your browser does not support the HTML5 Canvas tag. Please switch to a newer browser	
+        </canvas>
+	</body>
+</html>
